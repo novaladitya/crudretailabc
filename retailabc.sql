@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2020 at 08:50 AM
+-- Generation Time: Dec 08, 2020 at 09:44 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -44,7 +44,7 @@ CREATE TABLE `obat` (
 INSERT INTO `obat` (`id`, `nama`, `slug`, `foto`, `stok`, `created_at`, `updated_at`) VALUES
 (1, 'Acyclovir Topikal', 'acyclovir-topikal', 'acyclovir-topikal.jpg', 3, NULL, '2020-12-07 13:15:06'),
 (3, 'Amoxillin', 'amoxillin', 'amoxillin.jpg', 0, NULL, NULL),
-(30, 'Ampicillin', 'ampicillin', 'default.jpg', 12, '2020-12-07 10:14:10', '2020-12-07 12:58:15');
+(30, 'Ampicillin', 'ampicillin', 'default.jpg', 5, '2020-12-07 10:14:10', '2020-12-08 02:10:08');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,8 @@ CREATE TABLE `obatkeluar` (
 INSERT INTO `obatkeluar` (`id`, `nama`, `slug`, `unit`, `created_at`, `updated_at`) VALUES
 (1, 'Acyclovir Topikal', 'acyclovir-topikal', 1, '2020-12-07 11:03:27', '2020-12-07 11:03:27'),
 (2, 'Acyclovir Topikal', 'acyclovir-topikal', 2, '2020-12-07 11:04:10', '2020-12-07 11:04:10'),
-(3, 'Ampicillin', 'ampicillin', 1, '2020-12-07 12:58:15', '2020-12-07 12:58:15');
+(3, 'Ampicillin', 'ampicillin', 1, '2020-12-07 12:58:15', '2020-12-07 12:58:15'),
+(4, 'Ampicillin', 'ampicillin', 7, '2020-12-08 02:10:08', '2020-12-08 02:10:08');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_level`, `user_name`, `user_email`, `user_password`) VALUES
-(1, 'admin', 'novaladitya', 'noval@abc.com', 'noval');
+(1, 'admin', 'novaladitya', 'noval@abc.com', 'noval'),
+(2, 'admin', 'gilangaffandi', 'gilang@abc.com', 'gilang'),
+(3, 'admin', 'yuliviaannisa', 'yuan@abc.com', 'yuan');
 
 --
 -- Indexes for dumped tables
@@ -158,7 +161,7 @@ ALTER TABLE `obat`
 -- AUTO_INCREMENT for table `obatkeluar`
 --
 ALTER TABLE `obatkeluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `obatmasuk`
@@ -170,7 +173,7 @@ ALTER TABLE `obatmasuk`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
