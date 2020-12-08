@@ -24,8 +24,9 @@
                 </li>
             </ul>
             <span class="navbar-text" style="margin-right: 20px">
-                Data-data Obat
+                Halo, <?= session()->get('user_name'); ?>!
             </span>
+            <a href="/users/logout" class="btn btn-danger">Logout</a>
         </div>
     </div>
 </nav>

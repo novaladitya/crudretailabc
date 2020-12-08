@@ -19,7 +19,12 @@ class Pages extends BaseController
         $data = [
             'title' => 'Home | Retail ABC'
         ];
-        return view('pages/home', $data);
+
+        if (session()->get('logged_in')) {
+            return view('pages/home', $data);
+        } else {
+            return redirect()->to('/login');
+        }
     }
 
     public function laporan()
@@ -35,7 +40,12 @@ class Pages extends BaseController
             'datamasuk' => $jumlahObatMasuk,
             'datakeluar' => $jumlahObatKeluar
         ];
-        return view('pages/laporan', $data);
+
+        if (session()->get('logged_in')) {
+            return view('pages/laporan', $data);
+        } else {
+            return redirect()->to('/login');
+        }
     }
 
     //--------------------------------------------------------------------

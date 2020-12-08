@@ -25,9 +25,11 @@ class Obat extends BaseController
             'obat' => $this->obatModel->getObat(),
             'validation' => \Config\Services::validation()
         ];
-
-
-        return view('obat/index', $data);
+        if (session()->get('logged_in')) {
+            return view('obat/index', $data);
+        } else {
+            return redirect()->to('/login');
+        }
     }
 
     public function detail($slug)
@@ -40,8 +42,11 @@ class Obat extends BaseController
         if (empty($data['obat'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Nama Obat Tidak Ditemukan.');
         }
-
-        return view('obat/editobat', $data);
+        if (session()->get('logged_in')) {
+            return view('obat/editobat', $data);
+        } else {
+            return redirect()->to('/login');
+        }
     }
 
     public function save()
@@ -162,7 +167,11 @@ class Obat extends BaseController
             'obat' => $this->obatMasukModel->getObatMasuk(),
         ];
 
-        return view('obat/trxmasuk', $data);
+        if (session()->get('logged_in')) {
+            return view('obat/trxmasuk', $data);
+        } else {
+            return redirect()->to('/login');
+        }
     }
 
     public function trxkeluar()
@@ -172,7 +181,11 @@ class Obat extends BaseController
             'obat' => $this->obatKeluarModel->getObatKeluar(),
         ];
 
-        return view('obat/trxkeluar', $data);
+        if (session()->get('logged_in')) {
+            return view('obat/trxkeluar', $data);
+        } else {
+            return redirect()->to('/login');
+        }
     }
 
     //--------------------------------------------------------------------

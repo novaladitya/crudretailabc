@@ -31,6 +31,8 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('/login', 'Users::login');
+
 $routes->get('/', 'Pages::index');
 $routes->get('/laporan', 'Pages::laporan');
 $routes->get('/transaksimasuk', 'Obat::trxmasuk');
