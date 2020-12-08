@@ -7,5 +7,7 @@ Nama Anggota Kelompok
    - 1817051019
 3. Yulivia Annisa Putri
    - 1857051008
+
+Kelas B - S1 Ilmu Komputer 2018
   
 **Import file sql terlebih dahulu pada phpMyAdmin**
