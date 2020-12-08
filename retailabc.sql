@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2020 at 02:59 AM
+-- Generation Time: Dec 08, 2020 at 08:50 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -95,6 +95,27 @@ INSERT INTO `obatmasuk` (`id`, `nama`, `slug`, `unit`, `created_at`, `updated_at
 (3, 'Acyclovir Topikal', 'acyclovir-topikal', 5, '2020-12-07 10:53:12', '2020-12-07 10:53:12'),
 (4, 'Ampicillin', 'ampicillin', 13, '2020-12-07 12:57:56', '2020-12-07 12:57:56');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_level` varchar(100) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `user_password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_level`, `user_name`, `user_email`, `user_password`) VALUES
+(1, 'admin', 'novaladitya', 'noval@abc.com', 'noval');
+
 --
 -- Indexes for dumped tables
 --
@@ -118,6 +139,12 @@ ALTER TABLE `obatmasuk`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -138,6 +165,12 @@ ALTER TABLE `obatkeluar`
 --
 ALTER TABLE `obatmasuk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
